@@ -164,9 +164,15 @@ Use the bystartup-web-qa skill to analyze this dashboard page and generate full 
 Use the bystartup-web-qa skill to create responsive Playwright tests for the checkout flow.
 ```
 
-```txt
-Use the bystartup-web-qa skill to generate, execute and validate E2E tests for this authentication flow.
-```
+---
+
+# Documentation
+
+Additional technical documentation:
+
+- [Architecture](./docs/architecture.md)
+- [Authentication](./docs/authentication.md)
+- [Responsive Testing](./docs/responsive-testing.md)
 
 ---
 
