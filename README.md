@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./banner.png" alt="bystartup-web-qa banner" width="100%" />
+</p>
+
 # bystartup-web-qa
 
 Autonomous web E2E testing skill for AI coding agents using Playwright.
