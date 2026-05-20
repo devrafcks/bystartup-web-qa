@@ -1,52 +1,35 @@
 # bystartup-web-qa
 
-Autonomous E2E testing skill for AI coding agents using Playwright.
+Autonomous web E2E testing skill for AI coding agents using Playwright.
 
-`bystartup-web-qa` is a web-focused QA automation skill designed to allow AI agents such as Claude Code, Gemini CLI and similar coding assistants to analyze frontend codebases, generate Playwright E2E tests, execute them automatically and iteratively fix failures.
+`bystartup-web-qa` is a skill designed for AI agents such as Claude Code, Gemini CLI and similar coding assistants to automatically generate, execute and maintain Playwright E2E tests for web applications.
 
-This project was created during the internal innovation initiative promoted by Bystartup.
-
----
-
-# About Bystartup Labs
-
-This project was developed as part of the **Bystartup Labs**, an internal weekly initiative created to encourage collaboration, experimentation, technical evolution and knowledge sharing among company members.
-
-The Labs environment is focused on:
-- emerging technologies
-- AI workflows
-- engineering experimentation
-- developer tooling
-- collaborative problem solving
-- rapid prototyping
-
-`bystartup-web-qa` was built as an experimental initiative to explore autonomous QA generation using AI agents.
+The skill analyzes frontend files, identifies flows and interactive elements, creates complete E2E coverage and automatically validates generated tests.
 
 ---
 
 # Features
 
-- Automatic E2E test generation
-- Playwright integration
-- Existing test analysis and incremental updates
+- Automatic Playwright E2E test generation
 - Automatic test execution
 - Automatic retry and failure correction
-- Authentication flow support
-- Session persistence
-- Mobile and responsive testing
-- Semantic locator prioritization
+- Existing test analysis and incremental updates
+- Authentication and session persistence support
+- Responsive and mobile test generation
+- API flow validation
 - Accessibility-oriented selectors
-- Loading, error and success state coverage
-- API interaction validation
+- Semantic locator prioritization
+- Error, loading and success state coverage
+- Automatic test folder creation
 - Multi-framework support
 
 ---
 
 # Supported Technologies
 
-The skill is focused exclusively on web applications.
+Focused exclusively on web applications.
 
-Supported environments include:
+Supported:
 - React
 - Next.js
 - Vue
@@ -58,18 +41,35 @@ Supported environments include:
 Not supported:
 - React Native
 - Flutter
-- Native mobile apps
+- Native mobile applications
 - Desktop applications
 
 ---
 
-# Stack
+# Main Stack
 
-Main testing library:
+Install Playwright:
 
 ```bash
 npm i -D @playwright/test
 ```
+
+---
+
+# What the Skill Does
+
+The skill is capable of:
+
+- Reading frontend source files
+- Identifying buttons, forms, navigation and UI states
+- Detecting API interactions
+- Detecting authentication flows
+- Generating complete E2E Playwright tests
+- Creating the testing structure automatically
+- Running generated tests automatically
+- Detecting failures and retrying fixes
+- Updating existing tests without losing valid coverage
+- Generating responsive scenarios for mobile, tablet and desktop
 
 ---
 
@@ -90,7 +90,7 @@ Generated file pattern:
 testes/[feature].e2e.test.ts
 ```
 
-Example:
+Examples:
 
 ```txt
 testes/login.e2e.test.ts
@@ -102,7 +102,7 @@ testes/checkout.e2e.test.ts
 
 # Authentication Support
 
-The skill automatically detects:
+Automatically detects:
 - JWT authentication
 - cookies
 - localStorage auth
@@ -124,7 +124,7 @@ testes/setup/auth.setup.ts
 
 # Responsive Testing
 
-The skill generates responsive scenarios for:
+Automatically generates responsive scenarios for:
 - mobile
 - tablet
 - desktop
@@ -150,12 +150,20 @@ After generating tests, the skill automatically:
 
 ---
 
-# Objective
+# Example Usage
 
-The main goal of this project is to transform AI coding agents into autonomous QA operators capable of generating and validating modern web E2E tests with minimal manual intervention.
+```txt
+use a skill bystartup-web-qa para gerar testes nesse arquivo
+```
 
 ---
 
-# Status
+# Objective
 
-Experimental internal tooling developed during Bystartup Labs.
+Transform AI coding agents into autonomous E2E QA operators capable of generating, executing and maintaining modern Playwright web tests with minimal manual intervention.
+
+---
+
+# Internal Context
+
+This project was developed during the Bystartup Labs internal initiative focused on experimentation, collaboration and AI engineering workflows.
