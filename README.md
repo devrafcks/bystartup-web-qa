@@ -153,7 +153,19 @@ After generating tests, the skill automatically:
 # Example Usage
 
 ```txt
-use a skill bystartup-web-qa para gerar testes nesse arquivo
+Use the bystartup-web-qa skill to generate complete Playwright E2E tests for the LoginForm.tsx component.
+```
+
+```txt
+Use the bystartup-web-qa skill to analyze this dashboard page and generate full E2E coverage.
+```
+
+```txt
+Use the bystartup-web-qa skill to create responsive Playwright tests for the checkout flow.
+```
+
+```txt
+Use the bystartup-web-qa skill to generate, execute and validate E2E tests for this authentication flow.
 ```
 
 ---
