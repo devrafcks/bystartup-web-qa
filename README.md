@@ -182,6 +182,4 @@ Transform AI coding agents into autonomous E2E QA operators capable of generatin
 
 ---
 
-# Internal Context
-
-This project was developed during the Bystartup Labs internal initiative focused on experimentation, collaboration and AI engineering workflows.
+Built during Bystartup Labs.
