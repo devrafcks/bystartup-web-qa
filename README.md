@@ -2,10 +2,6 @@
   <img src="./banner.png" alt="bystartup-web-qa banner" width="100%" />
 </p>
 
-# bystartup-web-qa
-
-Autonomous web E2E testing skill for AI coding agents using Playwright.
-
 `bystartup-web-qa` is a skill designed for AI agents such as Claude Code, Gemini CLI and similar coding assistants to automatically generate, execute and maintain Playwright E2E tests for web applications.
 
 The skill analyzes frontend files, identifies flows and interactive elements, creates complete E2E coverage and automatically validates generated tests.
