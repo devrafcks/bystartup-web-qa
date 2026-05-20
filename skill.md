@@ -1,77 +1,77 @@
 name: bystartup-web-qa
 
 description: |
-  Skill de engenharia automatizada de testes E2E web utilizando Playwright.
-  Analisa arquivos de interface web, identifica fluxos de usuário, estados visuais,
-  formulários, chamadas de API, autenticação, responsividade e navegação,
-  gerando, executando e corrigindo testes ponta-a-ponta automaticamente.
+  Automated web E2E testing engineering skill using Playwright.
+  Analyzes web interface files, identifies user flows, visual states,
+  forms, API calls, authentication, responsiveness and navigation,
+  automatically generating, executing and fixing end-to-end tests.
 
 lib-dependency: "npm i -D @playwright/test"
 
 triggers:
-  - "use a skill bystartup-web-qa para gerar testes nesse arquivo"
-  - "use a skill bystartup-web-qa para testar esse fluxo"
-  - "gere testes e2e para esse componente"
-  - "gere testes playwright para esse arquivo"
-  - "crie testes ponta-a-ponta para essa funcionalidade"
-  - "analise esse componente e gere testes e2e"
+  - "use the bystartup-web-qa skill to generate tests for this file"
+  - "use the bystartup-web-qa skill to test this flow"
+  - "generate e2e tests for this component"
+  - "generate playwright tests for this file"
+  - "create end-to-end tests for this feature"
+  - "analyze this component and generate e2e tests"
 
 ---
 
-# Objetivo
+# Objective
 
-Receber um ou mais arquivos de interface web e gerar testes ponta-a-ponta (E2E) inteligentes utilizando Playwright.
+Receive one or more web interface files and generate intelligent end-to-end (E2E) tests using Playwright.
 
-A skill deve:
+The skill must:
 
-- Ler e interpretar o código-fonte
-- Identificar fluxos de usuário
-- Detectar estados visuais e condicionais
-- Entender formulários e validações
-- Detectar chamadas de API
-- Detectar autenticação e sessão
-- Detectar comportamento responsivo
-- Verificar testes já existentes
-- Criar, atualizar ou substituir testes automaticamente
-- Executar os testes gerados
-- Corrigir falhas automaticamente
-- Garantir boas práticas modernas de QA e acessibilidade
+- Read and interpret source code
+- Identify user flows
+- Detect visual and conditional states
+- Understand forms and validations
+- Detect API calls
+- Detect authentication and sessions
+- Detect responsive behavior
+- Check existing tests
+- Create, update or replace tests automatically
+- Execute generated tests
+- Automatically fix failures
+- Enforce modern QA and accessibility best practices
 
 ---
 
-# Ativação
+# Activation
 
-A skill só deve ser executada mediante comando explícito do usuário.
+The skill must only run through explicit user commands.
 
-Nunca ativar automaticamente.
+Never activate automatically.
 
-Exemplo:
+Example:
 
 ```txt
-use a skill bystartup-web-qa para gerar testes nesse arquivo
+use the bystartup-web-qa skill to generate tests for this file
 ```
 
 ---
 
-# Passo 1 — Validar ambiente Playwright
+# Step 1 — Validate Playwright Environment
 
-Verificar se `@playwright/test` existe em `devDependencies`.
+Check whether `@playwright/test` exists in `devDependencies`.
 
-Caso não exista:
+If missing:
 
-```bash id="u2m9r1"
+```bash
 npm i -D @playwright/test
 ```
 
-Verificar existência de:
+Check for:
 
-```txt id="f7w3z2"
+```txt
 playwright.config.ts
 ```
 
-Caso não exista, sugerir:
+If missing, suggest:
 
-```ts id="v8k4d9"
+```ts
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
@@ -87,27 +87,27 @@ export default defineConfig({
 
 ---
 
-# Passo 2 — Estrutura de testes
+# Step 2 — Test Structure
 
-Buscar os diretórios:
+Search for:
 
 - `/testes`
 - `/tests`
 - `/src/testes`
 - `/src/tests`
 
-Caso nenhum exista:
-- criar `/testes` na raiz do projeto
+If none exist:
+- create `/testes` at the project root
 
-Os arquivos devem seguir:
+Generated files must follow:
 
-```txt id="r4c8x6"
+```txt
 testes/[feature].e2e.test.ts
 ```
 
-Exemplos:
+Examples:
 
-| Origem | Teste |
+| Source | Generated Test |
 |---|---|
 | LoginForm.tsx | testes/login.e2e.test.ts |
 | Checkout.vue | testes/checkout.e2e.test.ts |
@@ -115,26 +115,26 @@ Exemplos:
 
 ---
 
-# Passo 3 — Verificar testes existentes
+# Step 3 — Existing Test Analysis
 
-Antes de gerar qualquer código:
+Before generating code:
 
-| Situação | Ação |
+| Situation | Action |
 |---|---|
-| Arquivo inexistente | Criar do zero |
-| Arquivo quebrado/desatualizado | Sobrescrever |
-| Arquivo parcialmente válido | Preservar cenários úteis e expandir |
+| Test file does not exist | Create from scratch |
+| Test file is outdated or broken | Fully overwrite |
+| Test file is partially valid | Preserve useful scenarios and expand coverage |
 
-A skill deve reaproveitar cobertura válida sempre que possível.
+The skill should reuse valid coverage whenever possible.
 
 ---
 
-# Passo 4 — Analisar o código-fonte
+# Step 4 — Analyze Source Code
 
-A skill deve mapear automaticamente:
+The skill must automatically map:
 
-## Elementos interativos
-- botões
+## Interactive Elements
+- buttons
 - links
 - inputs
 - textareas
@@ -143,25 +143,26 @@ A skill deve mapear automaticamente:
 - radios
 - switches
 
-## Formulários
-- campos obrigatórios
-- validações
-- mensagens de erro
-- máscaras
-- estados inválidos
+## Forms
+- required fields
+- validations
+- error messages
+- masks
+- invalid states
 
-## Fluxos condicionais
+## Conditional Flows
 - loading
-- erro
-- sucesso
-- empty state
-- renderização condicional
+- error
+- success
+- empty states
+- conditional rendering
 - skeletons
-- modais
+- modals
 - drawers
 
 ## APIs
-Detectar:
+
+Detect:
 - fetch
 - axios
 - graphql
@@ -170,36 +171,38 @@ Detectar:
 - SWR
 - React Query
 
-Cobrir:
-- sucesso
-- falha
+Cover:
+- success
+- failure
 - loading
 - retry
-- estados vazios
+- empty states
 
-## Navegação
-Detectar:
+## Navigation
+
+Detect:
 - router.push
 - navigate()
 - Link
 - href
 - redirects
 
-## Estado
-Detectar:
-- props condicionais
-- hooks de estado
+## State Management
+
+Detect:
+- conditional props
+- state hooks
 - reducers
-- contextos
-- stores globais
+- contexts
+- global stores
 
 ---
 
-# Estratégia de autenticação
+# Authentication Strategy
 
-Ao detectar autenticação ou rotas privadas, a skill deve implementar persistência de sessão.
+When authentication or protected routes are detected, the skill must implement session persistence.
 
-Detectar:
+Detect:
 - JWT
 - cookies
 - localStorage auth
@@ -213,37 +216,37 @@ Detectar:
 
 ---
 
-## Setup global obrigatório
+## Required Global Setup
 
-Gerar:
+Generate:
 
-```txt id="m5q1z7"
+```txt
 playwright/.auth/user.json
 ```
 
-e:
+and:
 
-```txt id="c9v3n2"
+```txt
 testes/setup/auth.setup.ts
 ```
 
 ---
 
-## Persistência de sessão
+## Session Persistence
 
-Exemplo:
+Example:
 
-```ts id="x4b7k1"
+```ts
 import { test as setup } from '@playwright/test';
 
-setup('autenticar usuário', async ({ page }) => {
+setup('authenticate user', async ({ page }) => {
   await page.goto('/login');
 
-  await page.getByLabel(/e-mail/i).fill('teste@teste.com');
-  await page.getByLabel(/senha/i).fill('123456');
+  await page.getByLabel(/e-mail/i).fill('test@test.com');
+  await page.getByLabel(/password/i).fill('123456');
 
   await page.getByRole('button', {
-    name: /entrar/i,
+    name: /login/i,
   }).click();
 
   await page.context().storageState({
@@ -254,11 +257,11 @@ setup('autenticar usuário', async ({ page }) => {
 
 ---
 
-## Reutilização de autenticação
+## Authentication Reuse
 
-Nos testes protegidos:
+For protected tests:
 
-```ts id="p6w2r8"
+```ts
 test.use({
   storageState: 'playwright/.auth/user.json',
 });
@@ -266,53 +269,53 @@ test.use({
 
 ---
 
-## Regras obrigatórias de autenticação
+## Authentication Rules
 
-Nunca repetir login em todos os testes.
+Never repeat login in every test.
 
-Utilizar setup compartilhado sempre que possível.
+Use shared setup whenever possible.
 
-Cobrir:
-- acesso autorizado
-- acesso negado
-- sessão expirada
+Cover:
+- authorized access
+- denied access
+- expired sessions
 - logout
 - refresh token
-- redirecionamentos
+- redirects
 
 ---
 
-# Estratégia responsiva e mobile
+# Responsive and Mobile Strategy
 
-Ao detectar:
+When detecting:
 - media queries
 - Tailwind breakpoints
-- hidden/block responsivos
+- responsive hidden/block states
 - drawers
-- menus mobile
-- navbar colapsada
+- mobile menus
+- collapsed navigation
 - viewport rendering
 - matchMedia
-- componentes adaptativos
+- adaptive components
 
-A skill deve gerar testes específicos mobile.
+The skill must generate dedicated mobile tests.
 
 ---
 
-## Breakpoints obrigatórios
+## Required Breakpoints
 
-Cobrir:
+Cover:
 - mobile
 - tablet
 - desktop
 
 ---
 
-## Estratégia Playwright
+## Playwright Strategy
 
-Utilizar devices oficiais:
+Use official Playwright devices:
 
-```ts id="j7m4q3"
+```ts
 import { devices } from '@playwright/test';
 
 test.use({
@@ -320,9 +323,9 @@ test.use({
 });
 ```
 
-ou viewport customizado:
+Or custom viewport:
 
-```ts id="t3v9c6"
+```ts
 test.use({
   viewport: {
     width: 390,
@@ -333,28 +336,28 @@ test.use({
 
 ---
 
-## Cenários mobile obrigatórios
+## Required Mobile Scenarios
 
-Cobrir:
-- menu hamburguer
-- drawer
+Cover:
+- hamburger menus
+- drawers
 - overlays
-- modais mobile
-- scroll horizontal indevido
-- renderização condicional
-- elementos ocultos
+- mobile modals
+- unintended horizontal scrolling
+- conditional rendering
+- hidden elements
 - touch interactions
-- componentes adaptativos
+- adaptive components
 
-Exemplo:
+Example:
 
-```ts id="d8r2w5"
-test.describe('Navbar Mobile', () => {
+```ts
+test.describe('Mobile Navbar', () => {
   test.use({
     ...devices['iPhone 13'],
   });
 
-  test('deve abrir menu mobile', async ({ page }) => {
+  test('should open mobile menu', async ({ page }) => {
     await page.goto('/');
 
     await page.getByRole('button', {
@@ -370,93 +373,93 @@ test.describe('Navbar Mobile', () => {
 
 ---
 
-# Estratégia de localizadores
+# Locator Strategy
 
-Prioridade obrigatória:
+Required priority order:
 
 ## 1. getByRole
-```ts id="k5x1p8"
-page.getByRole('button', { name: /entrar/i })
+```ts
+page.getByRole('button', { name: /login/i })
 ```
 
 ## 2. getByLabel
-```ts id="w2n7v4"
-page.getByLabel('Senha')
+```ts
+page.getByLabel('Password')
 ```
 
 ## 3. getByPlaceholder
-```ts id="q9m3c1"
-page.getByPlaceholder('Digite seu e-mail')
+```ts
+page.getByPlaceholder('Enter your e-mail')
 ```
 
 ## 4. getByText
-```ts id="h6z8r2"
-page.getByText('Cadastro realizado com sucesso!')
+```ts
+page.getByText('Registration completed successfully!')
 ```
 
 ## 5. getByTestId
-```ts id="s4b1x9"
+```ts
 page.getByTestId('submit-button')
 ```
 
 ---
 
-## Último recurso
+## Last Resort
 
-Somente se necessário:
+Only if necessary:
 - CSS selectors
 - XPath
 
-Nunca usar CSS/XPath se houver alternativa semântica.
+Never use CSS/XPath if a semantic alternative exists.
 
 ---
 
-# Estratégia de assertions
+# Assertion Strategy
 
-Todo `test()` deve possuir pelo menos um `expect()` explícito.
+Every `test()` must contain at least one explicit `expect()`.
 
-Sempre utilizar assertions assíncronas:
+Always use asynchronous assertions:
 
-```ts id="g1r5n8"
+```ts
 await expect(page).toHaveURL('/dashboard');
 
 await expect(
-  page.getByText(/sucesso/i)
+  page.getByText(/success/i)
 ).toBeVisible();
 ```
 
-Nunca utilizar assertions frágeis síncronas.
+Never use fragile synchronous assertions.
 
 ---
 
-# Estrutura obrigatória dos testes
+# Required Test Structure
 
-Utilizar:
+Use:
 - `test.describe`
 - `test.beforeEach`
-- isolamento total entre testes
+- fully isolated tests
 
-Exemplo:
+Example:
 
-```ts id="y8q4m2"
+```ts
 import { test, expect } from '@playwright/test';
 
-test.describe('Fluxo E2E — Login', () => {
+test.describe('E2E Flow — Login', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/login');
   });
 
-  test('deve realizar login com sucesso', async ({ page }) => {
+  test('should login successfully', async ({ page }) => {
 
     await page.getByLabel('E-mail')
-      .fill('usuario@teste.com');
+      .fill('user@test.com');
 
-    await page.getByLabel('Senha')
+    await page.getByLabel('Password')
       .fill('123456');
 
     await page.getByRole('button', {
-      name: /entrar/i,
+      name: /login/i,
     }).click();
 
     await expect(page)
@@ -468,30 +471,30 @@ test.describe('Fluxo E2E — Login', () => {
 
 ---
 
-# APIs e estados assíncronos
+# APIs and Async States
 
-Priorizar validação visual real.
+Prioritize real visual validation.
 
-Evitar mocks desnecessários.
+Avoid unnecessary mocks.
 
-Cobrir:
+Cover:
 - loading
-- erro
+- error
 - retry
 - timeout
-- sucesso
+- success
 - empty states
 
-Quando necessário, utilizar:
+When necessary, use:
 
-```ts id="z2v6k1"
+```ts
 page.route()
 ```
 
-Exemplo:
+Example:
 
-```ts id="f9m3r7"
-await page.route('**/api/produtos', route =>
+```ts
+await page.route('**/api/products', route =>
   route.fulfill({
     status: 500,
     body: 'Internal Server Error',
@@ -501,133 +504,134 @@ await page.route('**/api/produtos', route =>
 
 ---
 
-# Execução automática dos testes
+# Automatic Test Execution
 
-Após gerar ou atualizar os testes, a skill deve executar automaticamente a suíte Playwright correspondente.
+After generating or updating tests, the skill must automatically execute the related Playwright suite.
 
-Executar preferencialmente:
+Preferably execute:
 
-```bash id="u5q8w1"
+```bash
 npx playwright test
 ```
 
-Ou executar apenas o arquivo relacionado:
+Or execute only the related file:
 
-```bash id="n7x2c4"
+```bash
 npx playwright test testes/[feature].e2e.test.ts
 ```
 
 ---
 
-# Estratégia de validação automática
+# Automatic Validation Strategy
 
-Após executar os testes:
+After executing tests:
 
-## Se os testes passarem
-- finalizar normalmente
-- informar sucesso
-- resumir cobertura gerada
+## If tests pass
+- finalize normally
+- report success
+- summarize generated coverage
 
-## Se os testes falharem
-A skill deve:
+## If tests fail
 
-1. analisar o erro retornado
-2. identificar:
-   - seletor inválido
+The skill must:
+
+1. analyze the returned error
+2. identify:
+   - invalid selector
    - timeout
-   - elemento inexistente
-   - fluxo incorreto
-   - autenticação quebrada
-   - problema responsivo
-   - estado assíncrono
-3. corrigir automaticamente
-4. executar novamente
+   - missing element
+   - incorrect flow
+   - broken authentication
+   - responsive issue
+   - asynchronous state issue
+3. automatically fix the issue
+4. execute tests again
 
 ---
 
-# Loop de estabilização
+# Stabilization Loop
 
-A skill deve repetir o ciclo:
+The skill must repeat the cycle:
 
-1. gerar ou corrigir
-2. executar
-3. validar
+1. generate or fix
+2. execute
+3. validate
 
-até que:
-- os testes passem
-ou
-- o limite máximo seja atingido
-
----
-
-# Limite de tentativas
-
-Máximo recomendado:
-- 3 tentativas automáticas por arquivo
-
-Após atingir o limite:
-- reportar falhas restantes
-- explicar provável causa
-- sugerir correção manual
+until:
+- tests pass
+or
+- maximum retry limit is reached
 
 ---
 
-# Relatório final obrigatório
+# Retry Limit
 
-Ao concluir, informar:
+Recommended maximum:
+- 3 automatic retries per file
 
-- arquivos criados
-- arquivos atualizados
-- quantidade de testes gerados
-- quantidade de testes aprovados
-- falhas restantes
-- cobertura identificada
-- fluxos autenticados cobertos
-- cenários mobile cobertos
+After reaching the limit:
+- report remaining failures
+- explain probable causes
+- suggest manual fixes
 
 ---
 
-# Cenários obrigatórios
+# Required Final Report
 
-Toda funcionalidade identificada deve possuir:
+After completion, report:
 
-- cenário principal
-- cenário alternativo
-- cenário de erro
-- validação visual
-- assertions explícitas
+- created files
+- updated files
+- generated tests count
+- passed tests count
+- remaining failures
+- identified coverage
+- authenticated flows covered
+- mobile scenarios covered
 
 ---
 
-# Regras proibidas
+# Required Scenarios
 
-Nunca usar:
+Every identified feature must include:
+
+- primary scenario
+- alternative scenario
+- error scenario
+- visual validation
+- explicit assertions
+
+---
+
+# Forbidden Rules
+
+Never use:
 - `page.waitForTimeout()`
-- testes interdependentes
-- CSS/XPath desnecessário
-- testes sem assertions
-- apenas happy-path
-- login repetido em todos os testes
+- interdependent tests
+- unnecessary CSS/XPath selectors
+- tests without assertions
+- happy-path only
+- repeated login in every test
 
 ---
 
-# Checklist obrigatório
+# Required Checklist
 
-Antes de finalizar:
+Before finalizing:
 
-- [ ] Todas as funcionalidades identificadas possuem cobertura
-- [ ] Existe ao menos um cenário alternativo
-- [ ] Existe ao menos um cenário de erro
-- [ ] Todos os testes possuem assertions
-- [ ] Nenhum seletor frágil foi usado sem necessidade
-- [ ] O arquivo segue `.e2e.test.ts`
-- [ ] O `describe` possui nome descritivo
-- [ ] APIs possuem cobertura
-- [ ] Estados de loading possuem cobertura
-- [ ] Navegação foi validada
-- [ ] Fluxos autenticados foram cobertos
-- [ ] Sessão persistente foi implementada
-- [ ] Componentes responsivos possuem testes mobile
-- [ ] Breakpoints foram considerados
-- [ ] Os testes foram executados
-- [ ] As falhas foram corrigidas automaticamente quando possível
+- [ ] All identified features have coverage
+- [ ] At least one alternative scenario exists
+- [ ] At least one error scenario exists
+- [ ] All tests contain assertions
+- [ ] No fragile selectors were unnecessarily used
+- [ ] File follows `.e2e.test.ts`
+- [ ] `describe` contains descriptive naming
+- [ ] APIs have coverage
+- [ ] Loading states have coverage
+- [ ] Navigation was validated
+- [ ] Authenticated flows were covered
+- [ ] Session persistence was implemented
+- [ ] Responsive components have mobile coverage
+- [ ] Breakpoints were considered
+- [ ] Tests were executed
+- [ ] Failures were automatically fixed when possible
